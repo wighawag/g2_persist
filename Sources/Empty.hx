@@ -93,14 +93,39 @@ class Empty extends Game {
 		var ratio = timeElapsed / duration;
 
 		if(ratio <= 1){
-			var g2 = frame.g2;
-			g2.begin();
-			g2.clear();
-			g2.color = Color.fromBytes(0, 255, 255);
-			g2.fillRect(frame.width / 4, frame.height / 2 - 10, ratio*100 * frame.width / 2 / 100, 20);
-			g2.color = Color.fromBytes(28, 28, 28);
-			g2.drawRect(frame.width / 4, frame.height / 2 - 10, frame.width / 2, 20);	
-			g2.end();	
+			// var g2 = frame.g2;
+			// g2.begin();
+			// g2.clear();
+			// g2.color = Color.fromBytes(0, 255, 255);
+			// g2.fillRect(frame.width / 4, frame.height / 2 - 10, ratio*100 * frame.width / 2 / 100, 20);
+			// g2.color = Color.fromBytes(28, 28, 28);
+			// g2.drawRect(frame.width / 4, frame.height / 2 - 10, frame.width / 2, 20);	
+			// g2.end();	
+
+			// A graphics object which lets us perform 3D operations
+			var g = frame.g4;
+
+			// Begin rendering
+	        g.begin();
+
+	        //g.viewport(0,0,frame.width,frame.height);
+
+	        // Clear screen to black
+			g.clear(Color.Black);
+
+			// Bind shader program we want to draw with
+			g.setProgram(program);
+
+			// Bind data we want to draw
+			g.setVertexBuffer(vertexBuffer);
+			g.setIndexBuffer(indexBuffer);
+
+			// Draw!
+			g.drawIndexedVertices();
+
+			// End rendering
+			g.end();
+
 		}else{
 			
 			// A graphics object which lets us perform 3D operations
@@ -110,12 +135,12 @@ class Empty extends Game {
 
 			// Begin rendering
 	        g.begin();
-
+	        g.clear(Color.Black);
 	        var height = 100;
 	        g.viewport(0,frame.height - height,frame.width,height);
 
 	        // Clear screen to black
-			g.clear(Color.Black);
+			
 
 			// Bind shader program we want to draw with
 			g.setProgram(program);

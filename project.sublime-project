@@ -9,8 +9,8 @@
 	{
 		"haxe_builds":
 		[
-			"build@project-html5.hxml",
-			//"build@project-windows.hxml"
+			//"build@project-html5.hxml",
+			"build@project-windows.hxml"
 		]
 	}
 }
