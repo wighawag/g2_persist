@@ -1,0 +1,21 @@
+{
+	"format": 3,
+	"game": {
+		"name": "g2_persist",
+		"width": 640,
+		"height": 480
+	},
+	"libraries": [
+	],
+	"assets": [
+	],
+	"rooms": [
+		{
+			"assets": [
+			],
+			"name": "room0",
+			"neighbours": [],
+			"parent": null
+		}
+	]
+}

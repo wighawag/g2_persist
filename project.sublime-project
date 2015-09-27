@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"haxe_builds":
+		[
+			"build@project-html5.hxml",
+			//"build@project-windows.hxml"
+		]
+	}
+}
